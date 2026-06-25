@@ -53,3 +53,16 @@ const resultadoForEach = productos.forEach((producto) => {
 });
 
 console.log("Valor devuelto por forEach:", resultadoForEach);
+
+
+/////////////////////
+
+
+console.log("2. CREACIÓN DE ETIQUETAS CON MAP");
+
+const etiquetasProductos = productos.map((producto) => {
+    return `PRODUCTO: ${producto.nombre} - S/ ${producto.precio}`;
+});
+
+console.log("Nueva colección de etiquetas:");
+console.table(etiquetasProductos);
