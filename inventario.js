@@ -27,3 +27,29 @@ const productos = [
 
 console.log("ARREGLO ORIGINAL DE PRODUCTOS");
 console.table(productos);
+
+
+
+console.log("1. FOREACH CON FUNCIÓN TRADICIONAL");
+
+productos.forEach(function (producto) {
+    console.log(
+        `ID: ${producto.id} | Producto: ${producto.nombre} | Precio: S/ ${producto.precio} | Stock: ${producto.stock}`
+    );
+});
+
+
+console.log("1. FOREACH CON FUNCIÓN FLECHA");
+
+productos.forEach((producto) => {
+    console.log(
+        `Producto: ${producto.nombre} - Categoría: ${producto.categoria}`
+    );
+});
+
+
+const resultadoForEach = productos.forEach((producto) => {
+    return producto.nombre;
+});
+
+console.log("Valor devuelto por forEach:", resultadoForEach);
