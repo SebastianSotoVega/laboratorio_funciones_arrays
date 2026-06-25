@@ -66,3 +66,17 @@ const etiquetasProductos = productos.map((producto) => {
 
 console.log("Nueva colección de etiquetas:");
 console.table(etiquetasProductos);
+
+////////////
+
+console.log("3. PRODUCTOS FILTRADOS");
+
+const productosTecnologiaDisponibles = productos.filter((producto) => {
+    return producto.categoria === "Tecnología" && producto.stock > 0;
+});
+
+console.log("Productos de Tecnología con stock disponible:");
+console.table(productosTecnologiaDisponibles);
+
+console.log("Arreglo original después de filter:");
+console.table(productos);
