@@ -139,5 +139,32 @@ console.log(
     existeProductoMayorA500
 );
 
+/////////////////////////
 
+console.log("7. CONTEXTO THIS EN FUNCIONES FLECHA");
 
+const productoConFuncionFlecha = {
+    nombre: "Laptop Gamer",
+
+    mostrarNombre: () => {
+        console.log(
+            "Nombre usando función flecha:",
+            this.nombre
+        );
+    }
+};
+
+productoConFuncionFlecha.mostrarNombre();
+
+const productoConFuncionTradicional = {
+    nombre: "Laptop Gamer",
+
+    mostrarNombre: function () {
+        console.log(
+            "Nombre usando función tradicional:",
+            this.nombre
+        );
+    }
+};
+
+productoConFuncionTradicional.mostrarNombre();
