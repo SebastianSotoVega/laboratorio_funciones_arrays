@@ -28,7 +28,7 @@ const productos = [
 console.log("ARREGLO ORIGINAL DE PRODUCTOS");
 console.table(productos);
 
-
+////////////////////
 
 console.log("1. FOREACH CON FUNCIÓN TRADICIONAL");
 
@@ -46,7 +46,6 @@ productos.forEach((producto) => {
         `Producto: ${producto.nombre} - Categoría: ${producto.categoria}`
     );
 });
-
 
 const resultadoForEach = productos.forEach((producto) => {
     return producto.nombre;
@@ -93,3 +92,38 @@ const productoEncontrado = productos.find((producto) => {
 
 console.log(`Resultado de la búsqueda del ID ${idBuscado}:`);
 console.log(productoEncontrado);
+
+///////////////////
+
+console.log("5. VALOR TOTAL DEL INVENTARIO CON REDUCE");
+
+const tablaTraza = [];
+
+const valorTotalInventario = productos.reduce(
+    (acumulador, producto, indice) => {
+        const valorProducto = producto.precio * producto.stock;
+        const nuevoAcumulador = acumulador + valorProducto;
+
+        tablaTraza.push({
+            iteracion: indice + 1,
+            producto: producto.nombre,
+            acumuladorAnterior: acumulador,
+            precioActual: producto.precio,
+            stockActual: producto.stock,
+            subtotal: valorProducto,
+            resultadoParcial: nuevoAcumulador
+        });
+
+        return nuevoAcumulador;
+    },
+    0
+);
+
+console.log("Tabla de traza del método reduce:");
+console.table(tablaTraza);
+
+console.log(
+    `Valor monetario total del inventario: S/ ${valorTotalInventario.toFixed(2)}`
+);
+
+
