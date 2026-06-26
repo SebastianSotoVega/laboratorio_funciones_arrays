@@ -80,3 +80,16 @@ console.table(productosTecnologiaDisponibles);
 
 console.log("Arreglo original después de filter:");
 console.table(productos);
+
+//////////////////
+
+console.log("4. BÚSQUEDA DE PRODUCTO CON FIND");
+
+const idBuscado = 12;
+
+const productoEncontrado = productos.find((producto) => {
+    return producto.id === idBuscado;
+});
+
+console.log(`Resultado de la búsqueda del ID ${idBuscado}:`);
+console.log(productoEncontrado);
