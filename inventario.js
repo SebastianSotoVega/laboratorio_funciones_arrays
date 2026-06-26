@@ -126,4 +126,18 @@ console.log(
     `Valor monetario total del inventario: S/ ${valorTotalInventario.toFixed(2)}`
 );
 
+//////////////////////////////////
+
+console.log("6. VALIDACIÓN DE PRECIOS CON SOME");
+
+const existeProductoMayorA500 = productos.some((producto) => {
+    return producto.precio > 500;
+});
+
+console.log(
+    "¿Existe algún producto que cueste más de S/ 500?",
+    existeProductoMayorA500
+);
+
+
 
